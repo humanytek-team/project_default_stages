@@ -19,12 +19,12 @@
 ##############################################################################
 
 {
-    'name': 'Project Default Stages',
-    'version': '1.0',
-    'author': 'Humanytek',
-    'website': 'http://humanytek.com',
-    'depends': [
-        'project',
+    "name": "Project Default Stages",
+    "version": "17.0.0.1.0",
+    "author": "Humanytek",
+    "website": "http://humanytek.com",
+    "depends": [
+        "project",
     ],
-    'data': []
+    "data": [],
 }
