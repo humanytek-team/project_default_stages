@@ -27,4 +27,6 @@
         "project",
     ],
     "data": [],
+    "installable": True,
+    "application": False,
 }
