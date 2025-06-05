@@ -5,7 +5,12 @@ class ProjectProject(models.Model):
     _inherit = "project.project"
 
     def _get_all_types(self):
-        return self.env["project.task.type"].search([("name", "!=", "New")])
+        first_project = self.env["project.project"].search(
+            [("id", "!=", self.id)], limit=1
+        )
+        return self.env["project.task.type"].browse(
+            first_project.type_ids.ids if first_project else []
+        )
 
     type_ids = fields.Many2many(
         string="Tasks Stages",
