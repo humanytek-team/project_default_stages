@@ -6,7 +6,11 @@ class ProjectProject(models.Model):
 
     def _get_all_types(self):
         first_project = self.env["project.project"].search(
-            [("id", "!=", self.id)], limit=1
+            [
+                ("id", "!=", self.id),
+                ("name", "=", "QUOTES White"),
+            ],
+            limit=1,
         )
         return self.env["project.task.type"].browse(
             first_project.type_ids.ids if first_project else []
